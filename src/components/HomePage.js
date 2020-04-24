@@ -9,14 +9,17 @@ import useSWR from 'swr'
 import DataTable from 'react-data-table-component'
 import colums from '../components/Datatablecolums'
 import DataChart from '../components/DataChart'
+import TimeSeriesChart from '../components/TimeseriesChart'
  
 const apiUrl = 'https://api.covid19api.com/summary';
+const timeseriesChart = 'https://pomber.github.io/covid19/timeseries.json'
 const fetcher = url => fetch(url).then(r => r.json()); 
 const HomePage = () => {
     const logout = () => {
         fire.auth().signOut()
       }
       const { data, error } = useSWR(apiUrl, fetcher)
+      const { data: timeseries } = useSWR(timeseriesChart, fetcher)
 
    if (!data) {
      return <p>not found</p>
@@ -44,6 +47,7 @@ const HomePage = () => {
          pagination={true}
        />
        <DataChart data={data.Countries}/>
+       <TimeSeriesChart data={timeseries.Thailand}/>
          {/* <p>{JSON.stringify(data)}</p> */}
        </div>
      )
