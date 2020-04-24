@@ -1,3 +1,4 @@
+import React from 'react'
 import {
     LineChart,
     Line,
@@ -7,7 +8,7 @@ import {
     CartesianGrid,
     ResponsiveContainer
   } from 'recharts';
-  
+
   export default ({ data }) => {
     return (
       <ResponsiveContainer width="100%" height={500}>

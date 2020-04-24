@@ -7,7 +7,8 @@ import axios from 'axios'
 import fetch from 'unfetch'
 import useSWR from 'swr'
 import DataTable from 'react-data-table-component'
- import colums from '../components/Datatablecolums'
+import colums from '../components/Datatablecolums'
+import DataChart from '../components/DataChart'
  
 const apiUrl = 'https://api.covid19api.com/summary';
 const fetcher = url => fetch(url).then(r => r.json()); 
@@ -35,13 +36,14 @@ const HomePage = () => {
              </Button>
            </Form>
          </Navbar>
-         
+
          <DataTable
          title="COVID19 Summary"
          columns={colums}
          data={data.Countries}
          pagination={true}
        />
+       <DataChart data={data.Countries}/>
          {/* <p>{JSON.stringify(data)}</p> */}
        </div>
      )
