@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import LoginPgae from './components/LoginPage'
+import LoginPage from './components/LoginPage'
 import { Route } from 'react-router-dom';
- import HomePage from './components/Homepage'
+ import HomePage from './components/HomePage'
 
 function App() {
   return (
