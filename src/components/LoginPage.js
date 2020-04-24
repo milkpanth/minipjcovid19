@@ -110,6 +110,7 @@ function LoginPage () {
            </button>
          </div>
        </div> */}
+       {/* https://bootsnipp.com/snippets/7nk08 */}
      </div>
   )
 }
