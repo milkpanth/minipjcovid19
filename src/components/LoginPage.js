@@ -41,16 +41,16 @@ function LoginPage () {
          <Navbar.Toggle />
          <Navbar.Collapse className='justify-content-end'>
            <Navbar.Text>
-             Signed in as: <a href='#login'>Mark Otto</a>
+             {/* Signed in as: <a href='#login'>Mark Otto</a> */}
            </Navbar.Text>
          </Navbar.Collapse>
        </Navbar>
        <div className='sidenav'>
          <div className='login-main-text'>
-           <h2>Application</h2>
+           {/* <h2>Application</h2> */}
            <br></br>
            <h2>Login Page</h2>
-           <p>Login or register from here to access.</p>
+           <p>Login or register</p>
          </div>
       </div>
       <div className='main'>
