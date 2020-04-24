@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import firebase from 'firebase/app'
 import fire from '../config/fire'
 import './loginPage.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
 
 function LoginPage() {
     const [email, setEmail] = useState('')
