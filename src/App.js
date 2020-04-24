@@ -1,53 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import LoginPage from './components/LoginPage'
-import { Route } from 'react-router-dom';
-import fire from './config/fire'
-class App extends Component {
+import LoginPgae from './components/LoginPage'
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      user: {}
-    }
-  }
-
-  componentDidMount() {
-    this.authListener()
-  }
-
-
-  authListener() {
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user })
-        console.log('user',user)
-      }
-      else {
-        this.setState({ user: null })
-      }
-    })
-  }
-
-
-  render() {
-    if (this.state.user == null) {
-      return (
-        <div>
-          <LoginPage />
-        </div>
-
-      );
-    }
-    return (
-      <div>
-        <div>
-          
-          <Route path="/login" component={LoginPage} />
-
-        </div>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <LoginPgae/>
+    </div>
+  );
 }
-export default App
+
+export default App;
