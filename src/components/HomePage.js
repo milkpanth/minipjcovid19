@@ -1,25 +1,27 @@
-import React from 'react';
-import fire from '../config/fire';
+import React from 'react'
+import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './homePage.css'
 import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
 
 function HomePage() {
     const logout = () => {
-        fire.auth().signOut();
-    }
-    return (
+        fire.auth().signOut()
+      }
+      return (
         <div>
-            <Navbar>
-                <Navbar.Brand href='/'>Navbar with text</Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse className='justify-content-end'>
-                    <Navbar.Text>
-                        Signed in as: <a href='#login'>Mark Otto</a>
-                    </Navbar.Text>
-                </Navbar.Collapse>
+          <Navbar bg='dark' variant='dark'>
+            <Navbar.Brand href='#home'>MiniProjet covid19</Navbar.Brand>
+            <Nav className='mr-auto'>
+              <Nav.Link href='#home'>Home</Nav.Link>
+              <Nav.Link href='#features'>Features</Nav.Link>
+              <Nav.Link href='#pricing'>Pricing</Nav.Link>
+            </Nav>
+            <Form inline>
+              <Button onClick={logout} variant='outline-info'>Logout</Button>
+            </Form>
             </Navbar>
-            <button onClick={logout}>Logout</button>
-        </div>
-    )
-}
+            </div>
+   )
+ }
 export default HomePage;
