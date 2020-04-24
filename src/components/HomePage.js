@@ -1,7 +1,7 @@
 import React from 'react'
 import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './homePage.css'
+import './HomePage.css'
 import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
 
 function HomePage() {
