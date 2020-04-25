@@ -64,7 +64,7 @@ const HomePage = () => {
                         {`
              .container{
                 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap');
-                font-family: 'Baloo Bhaina 2', cursive;
+                font-family: 'Arial', cursive;
                width: 820px;
                margin: 0 auto;
              }
