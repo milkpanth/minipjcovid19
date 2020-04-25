@@ -2,6 +2,7 @@ import React from 'react'
 import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './HomePage.css'
+import Loading from '../components/Loading'
 import { Nav, Navbar, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
 import fetch from 'unfetch'
@@ -22,7 +23,7 @@ const HomePage = () => {
     const { data: timeseries } = useSWR(timeseriesChart, fetcher)
 
     if (!data) {
-        return <p>not found</p>
+        return <Loading/>
     } else
         return (
             <div>
@@ -43,6 +44,8 @@ const HomePage = () => {
                     <style jsx>
                         {`
              .container{
+                @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap');
+                font-family: 'Baloo Bhaina 2', cursive;
                width: 820px;
                margin: 0 auto;
              }
