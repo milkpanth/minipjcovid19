@@ -31,7 +31,6 @@ const SelfScreening = () => {
         fire.auth().signOut()
     }
     const [tasks, setTasks] = useState([])
-    const [name, setName] = useState('')
 
     const retriveData = () => {
         firestore
@@ -50,17 +49,17 @@ const SelfScreening = () => {
         retriveData()
     }, [])
 
-    const renderTask = () => {
-        if (tasks && tasks.length) {
-            return tasks.map((task, index) => (
-                <li key={index}>
-                    {task.id}:{task.name}{' '}
-                </li>
-            ))
-        } else {
-            return <div>No Task</div>
-        }
-    }
+    // const renderTask = () => {
+    //     if (tasks && tasks.length) {
+    //         return tasks.map((task, index) => (
+    //             <li key={index}>
+    //                 {task.id}:{task.name}{' '}
+    //             </li>
+    //         ))
+    //     } else {
+    //         return <div>No Task</div>
+    //     }
+    // }
     const addTask = (register) => {
         let id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1
         firestore
@@ -72,6 +71,12 @@ const SelfScreening = () => {
     const onSubmit = register => {
         console.log('register data : ', register)
         addTask(register)
+        if (register.sick === '1' && register.symptomCough === '1' && register.symptomRunnynose === '1'
+        && register.symptomShortnessofbreath === '1' && register.symptomSorethroats === '1'
+        && register.nhistory === '1' && register.thistory === '1' )
+          return console.log('ผลการตรวจสอบ = มีความเสี่ยง')
+        else 
+        return console.log('ผลการตรวจสอบ = ไม่มีความเสี่ยง')
     }
 
     const submit = () => { }
@@ -91,14 +96,6 @@ const SelfScreening = () => {
                 </Form>
             </Navbar>
  {/* ###########################   Firebase  ############################### */}
-            {/* <h1>Todo</h1>
-            <input
-                type='text'
-                name='name'
-                onChange={e => setName(e.target.value)}
-            ></input>
-            <button onClick={addTask}>Submit</button>
-            <ul> {renderTask()}</ul> */}
 
 {/* ##########################   Topic  ###################################### */}
             <div className='container'>
@@ -143,8 +140,8 @@ const SelfScreening = () => {
            </label>
                         <div className='col-sm-10'>
                             <select name='sick' ref={register} className='custom-select'>
-                                <option value='1'>ไม่มี NO</option>
-                                <option value='2'>มี YES</option>
+                            <option value='1'>มี YES</option>
+                             <option value='2'>ไม่มี NO </option>
                             </select>
                         </div>
 {/* ############################   symptom  ####################################### */}

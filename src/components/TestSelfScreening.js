@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from 'react'
 import fire from '../config/fire'
-import { Nav, Navbar, Button, Form } from 'react-bootstrap'
+import { Nav, Navbar, Button, Form , Modal} from 'react-bootstrap'
 import firebase from 'firebase/app';
 import 'firebase/firestore'
 import { useForm } from 'react-hook-form'
@@ -75,12 +75,40 @@ const SelfScreening = () => {
         if (register.sick === '1' && register.symptomCough === '1' && register.symptomRunnynose === '1'
             && register.symptomShortnessofbreath === '1' && register.symptomSorethroats === '1'
             && register.nhistory === '1' && register.thistory === '1')
-            return console.log('ผลการตรวจสอบ = มีความเสี่ยง')
+            return (
+                console.log('ผลการตรวจสอบ = มีความเสี่ยง')
+                )
         else
             return console.log('ผลการตรวจสอบ = ไม่มีความเสี่ยง')
     }
-
-    const submit = () => { }
+    const [modalShow, setModalShow] = React.useState(false);
+   const MyVerticallyCenteredModal =(props)=> {
+     return (
+       <Modal
+         {...props}
+         size="lg"
+         aria-labelledby="contained-modal-title-vcenter"
+         centered
+       >
+         <Modal.Header closeButton>
+           <Modal.Title id="contained-modal-title-vcenter">
+             Modal heading
+           </Modal.Title>
+         </Modal.Header>
+         <Modal.Body>
+           <h4>Centered Modal</h4>
+           <p>
+             Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+             dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+             consectetur ac, vestibulum at eros.
+           </p>
+         </Modal.Body>
+         <Modal.Footer>
+           <Button onClick={props.onHide}>Close</Button>
+         </Modal.Footer>
+       </Modal>
+     );
+   }
 
     return (
         <div>
@@ -322,7 +350,7 @@ const SelfScreening = () => {
                         </div>
                     </div>
                     {/* ############################   Button  ####################################### */}
-                    <button type='submit' className='btn btn-success'>
+                    <button type='submit' className='btn btn-success' data-toggle="modal" data-target="#exampleModalCenter">
                         <div>บันทึกและประเมินผลการเรียนของท่าน </div>
                          Save and self screening result
                 </button>
@@ -331,6 +359,14 @@ const SelfScreening = () => {
                         <div>ยกเลิก</div>
                         cancel
                     </button>
+                    <Button variant="primary" onClick={() => setModalShow(true)}>
+                           Launch vertically centered modal
+                    </Button>
+
+                    <MyVerticallyCenteredModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </form>
             </div>
         </div>
