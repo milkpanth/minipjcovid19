@@ -44,11 +44,10 @@ const HomePage = () => {
         return (
             <div>
                 <Navbar bg='dark' variant='dark'>
-                    <Navbar.Brand href='#home'>MiniProject covid19</Navbar.Brand>
+                <Navbar.Brand>MiniProjet covid19</Navbar.Brand>
                     <Nav className='mr-auto'>
-                        <Nav.Link href='#home'>Home</Nav.Link>
-                        <Nav.Link href='#features'>Features</Nav.Link>
-                        <Nav.Link href='#pricing'>Pricing</Nav.Link>
+                    <Nav.Link href='/' >Summary</Nav.Link>
+             <Nav.Link href='/selfScreening'>Self-Screening</Nav.Link>
                     </Nav>
                     <Form inline>
                         <Nav className='mr-auto'>

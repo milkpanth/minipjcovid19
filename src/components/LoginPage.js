@@ -38,8 +38,9 @@ function LoginPage() {
                 <div className='login-main-text'>
                     {/* <h2>Application</h2> */}
                     <br></br>
-                    <h2>Login Page</h2>
-                    <p>Login or register</p>
+                    <h2>Miniproject</h2>
+                    <p>Coronavirus statistics: Latest numbers on COVID-19 cases</p>
+                    <p>Please register or login</p>
                 </div>
             </div>
             <div className='main'>
