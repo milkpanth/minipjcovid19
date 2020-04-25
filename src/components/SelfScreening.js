@@ -91,14 +91,14 @@ const SelfScreening = () => {
                 </Form>
             </Navbar>
  {/* ###########################   Firebase  ############################### */}
-            <h1>Todo</h1>
+            {/* <h1>Todo</h1>
             <input
                 type='text'
                 name='name'
                 onChange={e => setName(e.target.value)}
             ></input>
             <button onClick={addTask}>Submit</button>
-            <ul> {renderTask()}</ul>
+            <ul> {renderTask()}</ul> */}
 
 {/* ##########################   Topic  ###################################### */}
             <div className='container'>
