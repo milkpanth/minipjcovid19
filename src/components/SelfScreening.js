@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from 'react'
 import fire from '../config/fire'
 import { Nav, Navbar, Button, Form } from 'react-bootstrap'
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
 import 'firebase/firestore'
 import { useForm } from 'react-hook-form'
+import '../components/selfScreening.css'
 
 if (firebase.apps.length === 0) firebase.initializeApp(fire)
 export const firestore = firebase.firestore()
@@ -67,7 +68,7 @@ const SelfScreening = () => {
             .doc(id + '')
             .set({ id, name })
     }
-    const { register, handleSubmit, errors } = useForm() // initialise the hook
+    const { register, handleSubmit  } = useForm() // initialise the hook
     const onSubmit = register => {
         console.log('data', register)
     }
@@ -98,56 +99,33 @@ const SelfScreening = () => {
             <ul> {renderTask()}</ul>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                เอกสารที่ มอ.696 /<input name='loca' ref={register}></input>
-         ลงวันที่
-         <input name='date' ref={register}></input>
+            เอกสารที่ มอ.696 /
+         <input name='loca' ref={register}></input>
                 <input type='submit' />
             </form>
 
             <div className='container'>
-                <style jsx>
-                    {`
-             .container {
-               @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap');
-               font-family: 'Arial', cursive;
-               width: 820px;
-               margin: 0 auto;
-               padding-top: 15px;
-             }
-             input {
-               -webkit-box-shadow: 0 5px 6px -8px black;
-               -moz-box-shadow: 0 5px 6px -8px black;
-               box-shadow: 0 5px 6px -8px black;
-             }
-             button {
-                margin: 15px;
-            }
-            `}
-                </style>
                 <h1>SelfScreening</h1>
                 <from>
                     <div class='form-group row'>
-                        <label for='staticEmail' class='col-sm-10 col-form-label'>
+                    <label className='col-sm-10 col-form-label'>
                             Email
               </label>
                         <div class='col-sm-10'>
                             <input
                                 type='text'
-                                readonly
                                 class='form-control-plaintext'
-                                id='staticEmail'
-                                value={user}
+                                placeholder={user}
                             ></input>
                         </div>
                     </div>
 
                     <div className='form-group row'>
-                        <label for='staticEmail' className='col-sm-10 col-form-label'>
+                    <label  className='col-sm-10 col-form-label'>
                             เพศ (Sex)
              </label>
                         <div className='col-sm-10'>
                             <select className='custom-select'>
-                                <option selected>Open this select menu</option>
                                 <option value='1'>ชาย (Male)</option>
                                 <option value='2'>หญิง (Female)</option>
                             </select>
@@ -163,7 +141,6 @@ const SelfScreening = () => {
            </label>
                         <div className='col-sm-10'>
                             <select className='custom-select'>
-                                <option selected>Open this select menu</option>
                                 <option value='1'>ไม่มี NO</option>
                                 <option value='2'>มี YES</option>
                             </select>
@@ -179,7 +156,6 @@ const SelfScreening = () => {
            </label>
                             <div class='col-sm-10'>
                                 <select class='custom-select'>
-                                    <option selected>Open this select menu</option>
                                     <option value='1'>ไอ Cough</option>
                                     <option value='2'>เจ็บคอ Sore throats</option>
                                     <option value='3'>น้ํามูกไหล Runny nose</option>
@@ -199,7 +175,7 @@ const SelfScreening = () => {
            </label>
                             <div className='col-sm-10'>
                                 <select className='custom-select'>
-                                    <option selected>Open this select menu</option>
+
                                     <option value='1'>One</option>
                                     <option value='2'>Two</option>
                                 </select>
@@ -207,7 +183,6 @@ const SelfScreening = () => {
                             <div className='col-sm-10'>
                                 <input
                                     type='text'
-                                    readonly
                                     className='form-control-plaintext'
                                     id='staticEmail'
                                     placeholder='จากประเทศ (From)'
@@ -225,7 +200,7 @@ const SelfScreening = () => {
            </label>
                             <div className='col-sm-10'>
                                 <select className='custom-select'>
-                                    <option selected>Open this select menu</option>
+
                                     <option value='1'>
                                         {' '}
                                  ใช่ Yes ( สัมผัสผู้ป่วย (contacted with suspected) )

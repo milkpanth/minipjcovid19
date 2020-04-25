@@ -3,9 +3,7 @@ import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './HomePage.css'
 import Loading from '../components/Loading'
-import SelfScreening from './SelfScreening'
 import { Nav, Navbar, Button, Form } from 'react-bootstrap'
-import axios from 'axios'
 import fetch from 'unfetch'
 import useSWR from 'swr'
 import DataTable from 'react-data-table-component'
@@ -36,7 +34,7 @@ const HomePage = () => {
     const logout = () => {
         fire.auth().signOut()
     }
-    const { data, error } = useSWR(apiUrl, fetcher)
+    const { data } = useSWR(apiUrl, fetcher)
     const { data: timeseries } = useSWR(timeseriesChart, fetcher)
 
     if (!data) {
