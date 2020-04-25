@@ -61,16 +61,17 @@ const SelfScreening = () => {
             return <div>No Task</div>
         }
     }
-    const addTask = () => {
+    const addTask = (register) => {
         let id = tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1
         firestore
             .collection('tasks')
             .doc(id + '')
-            .set({ id, name })
+            .set({ register })
     }
     const { register, handleSubmit } = useForm() // initialise the hook
     const onSubmit = register => {
-        console.log('data', register)
+        console.log('register data : ', register)
+        addTask(register)
     }
 
     const submit = () => { }
@@ -89,6 +90,7 @@ const SelfScreening = () => {
                     </Nav>
                 </Form>
             </Navbar>
+ {/* ###########################   Firebase  ############################### */}
             <h1>Todo</h1>
             <input
                 type='text'
@@ -98,11 +100,11 @@ const SelfScreening = () => {
             <button onClick={addTask}>Submit</button>
             <ul> {renderTask()}</ul>
 
-
+{/* ##########################   Topic  ###################################### */}
             <div className='container'>
                 <h1>SelfScreening</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-{/* ############################################################################### */}
+{/* ############################   Email  ####################################### */}
                     <div class='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             Email
@@ -119,8 +121,7 @@ const SelfScreening = () => {
                             ></input>
                         </div>
                     </div>
-{/* ############################################################################### */}
-
+{/* ############################   Sex  ####################################### */}
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             เพศ (Sex)
@@ -132,11 +133,11 @@ const SelfScreening = () => {
                             </select>
                         </div>
                     </div>
-{/* ############################################################################### */}
-                    <div className='form-group row'>
-                        <label className='col-sm-10 col-form-label'>
+{/* ############################   Sick  ####################################### */}
+                <div className='form-group row'>
+                   <label className='col-sm-10 col-form-label'>
                             1. ท่านมีไข้หรือไม่
-           </label>
+                  </label>
                         <label for='staticEmail' class='col-sm-10 col-form-label'>
                             Do you have Fever?
            </label>
@@ -146,7 +147,7 @@ const SelfScreening = () => {
                                 <option value='2'>มี YES</option>
                             </select>
                         </div>
-{/* ############################################################################### */}
+{/* ############################   symptom  ####################################### */}
                         <div className='form-group row'>
                             <label className='col-sm-10 col-form-label'>
                                 2. ท่านมีอาการดังต่อไปนี้ หรือไม่
@@ -164,7 +165,7 @@ const SelfScreening = () => {
                                 </select>
                             </div>
                         </div>
-{/* ############################################################################### */}
+{/* ############################   Thistory  ####################################### */}
                         <div className='form-group row'>
                             <label className='col-sm-10 col-form-label'>
                                 3. ท่านมีประวัติเดินทางมาจากประเทศจีน, ญี่ปุ่น, สิงคโปร์, เกาหลีใต้, ฮ่องกง, ไต้หวัน, มาเก๊า ,เยอรมัน, ฝรั่งเศส หรือในพื้นที่ที่มีการระบาดของโรคไวรัสโคโรนา สายพันธุ์ใหม่ 2019 ในช่วงเวลา 14 วัน ก่อนเริ่มป่วย ใช่หรือไม่ ?
@@ -190,7 +191,7 @@ const SelfScreening = () => {
                             </div>
                         </div>
 
- {/* ############################################################################### */}
+ {/* ############################   nhistory  ####################################### */}
                         <div className='form-group row'>
                             <label className='col-sm-10 col-form-label'>
                                 4. ท่านมีประวัติสัมผัสใกล้ชิดกับผู้ป่วยที่ต้องสงสัยการติดเชื้อโรคไวรัสโคโรนาสายพันธุ์ใหม่ 2019 หรือมีอาชีพที่มีโอกาสสัมผัสนักท่องเที่ยวต่างชาติ หรือไม่?
@@ -212,17 +213,16 @@ const SelfScreening = () => {
                                 </select>
                             </div>
                         </div>
-{/* ############################################################################### */}
+{/* ############################   Button  ####################################### */}
                         <div>
                         <button type='submit' className='btn btn-success'>
-                                <div>บันทึกและประเมินผลการเรียนของท่าน  </div>
-                                 Save and self screening result 
+                           <div>บันทึกและประเมินผลการเรียนของท่าน </div>
+                               Save and self screening result
                             </button>
                             <button type='button' className='btn btn-danger'>
                                 <div>ยกเลิก</div>
-                         cancel
-
-                        </button>
+                                     cancel
+                            </button>
                         </div>
                     </div>
                 </form>

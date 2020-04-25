@@ -72,6 +72,8 @@ const SelfScreening = () => {
     const onSubmit = register => {
         console.log('register data : ', register)
         addTask(register)
+        if (register.sick === '2' && register.symptom === '')
+            return console.log('sex choice = 1')
     }
 
     const submit = () => { }
@@ -90,7 +92,7 @@ const SelfScreening = () => {
                     </Nav>
                 </Form>
             </Navbar>
-{/* ###########################   Firebase  ############################### */}
+            {/* ###########################   Firebase  ############################### */}
             <h1>Todo</h1>
             <input
                 type='text'
@@ -99,11 +101,11 @@ const SelfScreening = () => {
             ></input>
             <button onClick={addTask}>Submit</button>
             <ul> {renderTask()}</ul>
- {/* ##########################   Topic  ###################################### */}
+            {/* ##########################   Topic  ###################################### */}
             <div className='container'>
                 <h1>SelfScreening</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-{/* ############################   Email  ####################################### */}
+                    {/* ############################   Email  ####################################### */}
                     <div class='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             Email
@@ -120,7 +122,7 @@ const SelfScreening = () => {
                             ></input>
                         </div>
                     </div>
-{/* ############################   Sex  ####################################### */}
+                    {/* ############################   Sex  ####################################### */}
 
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
@@ -134,7 +136,7 @@ const SelfScreening = () => {
                         </div>
                     </div>
 
-{/* ############################   Sick  ####################################### */}
+                    {/* ############################   Sick  ####################################### */}
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             1. ท่านมีไข้หรือไม่ Do you have Fever?
@@ -146,7 +148,7 @@ const SelfScreening = () => {
                             </select>
                         </div>
                     </div>
-{/* ############################   symptom  ####################################### */}
+                    {/* ############################   symptom  ####################################### */}
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             2. ท่านมีอาการดังต่อไปนี้ หรือไม่ Do you have any of these
@@ -162,9 +164,18 @@ const SelfScreening = () => {
                                     ไม่มีอาการเหล่านี้ None of these symtoms
                  </option>
                             </select>
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                    <div className="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" placeholder='ddd' ></input>
+                                    </div>
+                                </div>
+                                <input type="text" className="form-control" aria-label="Text input with checkbox"></input>
+                            </div>
                         </div>
                     </div>
-  {/* ############################   Thistory  ####################################### */}
+
+                    {/* ############################   Thistory  ####################################### */}
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             3. ท่านมีประวัติเดินทางมาจากประเทศจีน, ญี่ปุ่น, สิงคโปร์,
@@ -177,8 +188,8 @@ const SelfScreening = () => {
              </label>
                         <div className='col-sm-10'>
                             <select name='thistory' ref={register} className='custom-select'>
-                                <option value='1'>ใช่ YES</option>
-                                <option value='2'>ไม่ใช่ NO</option>
+                                <option value='1'>ใช่ ( Yes )</option>
+                                <option value='2'>ไม่ใช่ ( No )</option>
                             </select>
                         </div>
                         <div className='col-sm-10'>
@@ -191,7 +202,7 @@ const SelfScreening = () => {
                             ></input>
                         </div>
                     </div>
-{/* ############################   nhistory  ####################################### */}
+                    {/* ############################   nhistory  ####################################### */}
                     <div className='form-group row'>
                         <label className='col-sm-10 col-form-label'>
                             4.
@@ -213,10 +224,10 @@ const SelfScreening = () => {
                             </select>
                         </div>
                     </div>
-{/* ############################   Button  ####################################### */}
+                    {/* ############################   Button  ####################################### */}
                     <button type='submit' className='btn btn-success'>
-                    <div>บันทึกและประเมินผลการเรียนของท่าน </div>
-                         Save and self screening result   
+                        <div>บันทึกและประเมินผลการเรียนของท่าน </div>
+                         Save and self screening result
                 </button>
 
                     <button type='button' className='btn btn-danger'>
