@@ -20,7 +20,7 @@ class App extends Component {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user })
-        console.log('user',user)
+        //console.log('user',user.email)
       }
       else {
         this.setState({ user: null })

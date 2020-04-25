@@ -11,11 +11,27 @@ import DataTable from 'react-data-table-component'
 import colums from '../components/Datatablecolums'
 import DataChart from '../components/DataChart'
 import TimeSeriesChart from '../components/TimeseriesChart'
+import { useState, useEffect } from 'react'
 
 const apiUrl = 'https://api.covid19api.com/summary';
 const timeseriesChart = 'https://pomber.github.io/covid19/timeseries.json'
-const fetcher = url => fetch(url).then(r => r.json());
+const fetcher = url => fetch(url).then(r => r.json())
 const HomePage = () => {
+    const [user, setUser] = useState('')
+    const authListener = () => {
+        fire.auth().onAuthStateChanged(user => {
+            if (user) {
+                setUser(user.email)
+                //console.log('user', user.email)
+            } else {
+                setUser({ user: null })
+            }
+        })
+    }
+    useEffect(() => {
+        authListener()
+    }, [])
+
     const logout = () => {
         fire.auth().signOut()
     }
@@ -23,7 +39,7 @@ const HomePage = () => {
     const { data: timeseries } = useSWR(timeseriesChart, fetcher)
 
     if (!data) {
-        return <Loading/>
+        return <Loading />
     } else
         return (
             <div>
@@ -35,12 +51,15 @@ const HomePage = () => {
                         <Nav.Link href='#pricing'>Pricing</Nav.Link>
                     </Nav>
                     <Form inline>
+                        <Nav className='mr-auto'>
+                            <Nav.Link >{user}</Nav.Link>
+                        </Nav>
                         <Button onClick={logout} variant='outline-info'>
                             Logout
              </Button>
                     </Form>
                 </Navbar>
-                <div className="container">
+                <div className='container'>
                     <style jsx>
                         {`
              .container{
@@ -51,19 +70,23 @@ const HomePage = () => {
              }
            `}
                     </style>
-                    <div></div>
+                    <div>
+                        <DataTable
+                            title='COVID19 Summary'
+                            columns={colums}
+                            data={data.Countries}
+                            pagination={true}
+                        />
+                    </div>
 
-                    <DataTable
-                        title="COVID19 Summary"
-                        columns={colums}
-                        data={data.Countries}
-                        pagination={true}
+                    <DataChart data={data.Countries} title='Surmmary' />
+                    <TimeSeriesChart
+                        data={timeseries.Thailand}
+                        title='Summary Thailand'
                     />
-                    <DataChart data={data.Countries} title="Surmmary" />
-                    <TimeSeriesChart data={timeseries.Thailand} title="Summary Thailand" />
                     {/* <p>{JSON.stringify(data)}</p> */}
                 </div>
             </div>
-     )
- }
+        )
+}
 export default HomePage;
