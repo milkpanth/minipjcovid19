@@ -1,14 +1,14 @@
 import firebase from 'firebase'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC4b1CiwHTRjIyFBZygpKrNOKGLmIlZkrI",
-  authDomain: "minicovid19-f9aba.firebaseapp.com",
-  databaseURL: "https://minicovid19-f9aba.firebaseio.com",
-  projectId: "minicovid19-f9aba",
-  storageBucket: "minicovid19-f9aba.appspot.com",
-  messagingSenderId: "726639890321",
-  appId: "1:726639890321:web:0371e29efde85fd630d430",
-  measurementId: "G-64M7T7ZEJ4"
+  apiKey: "AIzaSyCJPK1wJOFVSlYM1gLf7dwHmnsyFx1yJvo",
+  authDomain: "miprojectcovi-19.firebaseapp.com",
+  databaseURL: "https://miprojectcovi-19.firebaseio.com",
+  projectId: "miprojectcovi-19",
+  storageBucket: "miprojectcovi-19.appspot.com",
+  messagingSenderId: "427662856846",
+  appId: "1:427662856846:web:3b9efa6574347fa2b9afdf",
+  measurementId: "G-NL928PS726"
   };
   const fire = firebase.initializeApp(firebaseConfig)
 
