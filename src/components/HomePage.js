@@ -44,7 +44,7 @@ const HomePage = () => {
             <div>
                  <div className="font"></div>
                 <Navbar bg='dark' variant='dark'>
-                <Navbar.Brand>MiniProjet covid19</Navbar.Brand>
+                <Navbar.Brand>MiniProject covid19</Navbar.Brand>
                     <Nav className='mr-auto'>
                     <Nav.Link href='/'>Summary</Nav.Link>
                       <Nav.Link href='/selfScreening'>Self-Screening For Thai</Nav.Link>
