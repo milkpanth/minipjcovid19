@@ -72,7 +72,7 @@ const SelfScreening = () => {
       register.thistory === '1'
     )
       return setStatus('Risky  Quarantine 14 days') && console.log('Risk Assessment = Risky')
-    else return setStatus('Not Risky  No Quarantine') && console.log('ผลการตรวจสอบ = Not Risky')
+    else return setStatus('Not Risky  No Quarantine') && console.log('Risk Assessment = Not Risky')
 
     
   }
