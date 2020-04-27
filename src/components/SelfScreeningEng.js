@@ -329,7 +329,7 @@ const SelfScreeningEng = () => {
               onClick={() => setModalShow(true)}
             >
               <div>Save and self screening result</div>
-              Save and self screening result
+              
             </Button>
             <MyVerticallyCenteredModal
               show={modalShow}
@@ -337,7 +337,7 @@ const SelfScreeningEng = () => {
             />
             <button type='button' className='btn btn-danger'>
               <div>cancel</div>
-              cancel
+              
             </button>
           </div>
         </form>
