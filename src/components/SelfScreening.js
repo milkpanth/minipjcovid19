@@ -144,11 +144,11 @@ const SelfScreening = () => {
           </div>
           {/* ############################   Sex  ####################################### */}
           <div className='form-group row'>
-            <label className='col-sm-10 col-form-label'>เพศ (Sex)</label>
+            <label className='col-sm-10 col-form-label'>เพศ</label>
             <div className='col-sm-10'>
               <select name='sex' ref={register} className='custom-select'>
-                <option value='1'>ชาย (Male)</option>
-                <option value='2'>หญิง (Female)</option>
+                <option value='1'>ชาย</option>
+                <option value='2'>หญิง</option>
               </select>
             </div>
           </div>
@@ -157,13 +157,11 @@ const SelfScreening = () => {
             <label className='col-sm-10 col-form-label'>
               1. ท่านมีไข้หรือไม่? 
             </label>
-            <label className='col-sm-10 col-form-label'>
-                Do you have Fever?
-            </label>
+            
             <div className='col-sm-10'>
               <select name='sick' ref={register} className='custom-select'>
-                <option value='1'>มี YES</option>
-                <option value='2'>ไม่มี NO </option>
+                <option value='1'>มี</option>
+                <option value='2'>ไม่มี </option>
               </select>
             </div>
           </div>
@@ -172,9 +170,7 @@ const SelfScreening = () => {
             <label className='col-sm-10 col-form-label'>
               2. ท่านมีอาการดังต่อไปนี้ หรือไม่ 
             </label>
-            <label className='col-sm-10 col-form-label'>
-              Do you have any of these Symptoms?
-            </label>
+            
             <div className='col-sm-10'>
               <div className='input-group mb-3'>
                 <div className='input-group-prepend'>
@@ -193,7 +189,7 @@ const SelfScreening = () => {
                   className='form-control'
                   aria-label='Text input with checkbox'
                 >
-                  ไอ Cough
+                  ไอ
                 </label>
               </div>
 
@@ -214,7 +210,7 @@ const SelfScreening = () => {
                   className='form-control'
                   aria-label='Text input with checkbox'
                 >
-                  เจ็บคอ Sore throats
+                  เจ็บคอ
                 </label>
               </div>
 
@@ -235,7 +231,7 @@ const SelfScreening = () => {
                   className='form-control'
                   aria-label='Text input with checkbox'
                 >
-                  น้ํามูกไหล Runny nose
+                  น้ํามูกไหล
                 </label>
               </div>
 
@@ -256,7 +252,7 @@ const SelfScreening = () => {
                   className='form-control'
                   aria-label='Text input with checkbox'
                 >
-                  เหนื่อยหอบ Shortness of breath
+                  เหนื่อยหอบ 
                 </label>
               </div>
 
@@ -277,7 +273,7 @@ const SelfScreening = () => {
                   className='form-control'
                   aria-label='Text input with checkbox'
                 >
-                  ไม่มีอาการเหล่านี้ None of these symtoms
+                  ไม่มีอาการเหล่านี้
                 </label>
               </div>
             </div>
@@ -290,16 +286,11 @@ const SelfScreening = () => {
               หรือในพื้นที่ที่มีการระบาดของโรคไวรัสโคโรนา สายพันธุ์ใหม่ 2019
               ในช่วงเวลา 14 วัน ก่อนเริ่มป่วย ใช่หรือไม่ ?
             </label>
-            <label className='col-sm-10 col-form-label'>
-              Do you have traveled from China, Japan, Singapore, 
-              Republic of Korea, HongKong, Taiwan, Macao, Germany, France 
-              or the Novel Coronavirus 2019 outbreak
-              areas within the past 14 days before get sick ?
-            </label>
+            
             <div className='col-sm-10'>
               <select name='thistory' ref={register} className='custom-select'>
-                <option value='1'>ใช่ ( Yes )</option>
-                <option value='2'>ไม่ใช่ ( No )</option>
+                <option value='1'>ใช่ </option>
+                <option value='2'>ไม่ใช่ </option>
               </select>
             </div>
             <div className='col-sm-10'>
@@ -308,7 +299,7 @@ const SelfScreening = () => {
                 name='from'
                 ref={register}
                 className='form-control-plaintext'
-                placeholder='จากประเทศ (From)'
+                placeholder='จากประเทศ'
               ></input>
             </div>
           </div>
@@ -319,20 +310,16 @@ const SelfScreening = () => {
               ท่านมีประวัติสัมผัสใกล้ชิดกับผู้ป่วยที่ต้องสงสัยการติดเชื้อโรคไวรัสโคโรนาสายพันธุ์ใหม่
               2019 หรือมีอาชีพที่มีโอกาสสัมผัสนักท่องเที่ยวต่างชาติ หรือไม่? 
             </label>
-            <label className='col-sm-10 col-form-label'>
-                Do you have contacted with suspected or 
-                have career opportunities with foreign tourists?
-            </label>
+           
             <div className='col-sm-10'>
               <select name='nhistory' ref={register} className='custom-select'>
                 <option value='1'>
-                  ใช่ Yes ( สัมผัสผู้ป่วย (contacted with suspected) )
+                  ใช่ ( สัมผัสผู้ป่วย )
                 </option>
                 <option value='2'>
-                  ใช่ Yes ( ประกอบอาชีพ (career opportunities with foreign
-                  tourists) )
+                  ใช่ ( ประกอบอาชีพ )
                 </option>
-                <option value='3'>ไม่ No</option>
+                <option value='3'>ไม่</option>
               </select>
             </div>
           </div>

@@ -144,11 +144,11 @@ const SelfScreeningEng = () => {
           </div>
           {/* ############################   Sex  ####################################### */}
           <div className='form-group row'>
-            <label className='col-sm-10 col-form-label'>เพศ (Sex)</label>
+            <label className='col-sm-10 col-form-label'>Sex</label>
             <div className='col-sm-10'>
               <select name='sex' ref={register} className='custom-select'>
-                <option value='1'>ชาย (Male)</option>
-                <option value='2'>หญิง (Female)</option>
+                <option value='1'>Male</option>
+                <option value='2'>Female</option>
               </select>
             </div>
           </div>
@@ -159,8 +159,8 @@ const SelfScreeningEng = () => {
             </label>
             <div className='col-sm-10'>
               <select name='sick' ref={register} className='custom-select'>
-                <option value='1'>มี YES</option>
-                <option value='2'>ไม่มี NO </option>
+                <option value='1'>YES</option>
+                <option value='2'> NO </option>
               </select>
             </div>
           </div>
