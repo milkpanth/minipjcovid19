@@ -330,7 +330,7 @@ const SelfScreening = () => {
               variant='primary'
               onClick={() => setModalShow(true)}
             >
-              <div>บันทึกและประเมินผลการเรียนของท่าน </div>
+              <div>บันทึกและประเมินผลความเสี่ยงของท่าน </div>
               Save and self screening result
             </Button>
             <MyVerticallyCenteredModal
