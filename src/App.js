@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import HomePage from './components/HomePage'
 import fire from './config/fire'
 import SelfScreening from './components/SelfScreening.js'
-import SelfScreeneng from './components/SelfScreeneng.js'
+import SelfScreeningEng from './components/SelfScreeningEng.js'
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/SelfScreening" component={SelfScreening} />
-          <Route path="/SelfScreeneng" component={SelfScreeneng} />
+          <Route path="/SelfScreeningEng" component={SelfScreeningEng} />
 
         </div>
       </div>

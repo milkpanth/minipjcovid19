@@ -10,7 +10,7 @@ import './selfScreening.css';
 
 if (firebase.apps.length === 0) firebase.initializeApp(fire)
 export const firestore = firebase.firestore()
-const SelfScreening = () => {
+const SelfScreeningEng = () => {
   const [user, setUser] = useState('')
 
   const authListener = () => {
@@ -108,8 +108,8 @@ const SelfScreening = () => {
       <Navbar bg='dark' variant='dark'>
         <Navbar.Brand>MiniProjet covid19</Navbar.Brand>
         <Nav className='mr-auto'>
-          <Nav.Link href='/'>Summary</Nav.Link>
-          <Nav.Link href='/selfScreening'>Self-Screening</Nav.Link>
+        <Nav.Link href='/'>Summary</Nav.Link>
+          <Nav.Link href='/selfScreening'>Self-Screening For Thai</Nav.Link>
           <Nav.Link href='/selfScreeningeng'>Self-Screening for Foreign</Nav.Link>
         </Nav>
         <Form inline>
@@ -346,4 +346,4 @@ const SelfScreening = () => {
   )
 }
 
-export default SelfScreening
+export default SelfScreeningEng

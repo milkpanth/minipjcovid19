@@ -12,7 +12,6 @@ import DataChart from '../components/DataChart'
 import TimeSeriesChart from '../components/TimeseriesChart'
 import { useState, useEffect } from 'react'
 
-
 const apiUrl = 'https://api.covid19api.com/summary';
 const timeseriesChart = 'https://pomber.github.io/covid19/timeseries.json'
 const fetcher = url => fetch(url).then(r => r.json())
@@ -48,8 +47,8 @@ const HomePage = () => {
                 <Navbar.Brand>MiniProjet covid19</Navbar.Brand>
                     <Nav className='mr-auto'>
                     <Nav.Link href='/'>Summary</Nav.Link>
-                     <Nav.Link href='/SelfScreening'>Self-Screening</Nav.Link>
-                     <Nav.Link href='/selfScreeningeng'>Self-Screening for Foreign</Nav.Link>
+                      <Nav.Link href='/selfScreening'>Self-Screening For Thai</Nav.Link>
+                      <Nav.Link href='/selfScreeningeng'>Self-Screening for Foreign</Nav.Link>
                     </Nav>
                     <Form inline>
                      <Nav className='mr-auto'>
