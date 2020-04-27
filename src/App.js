@@ -43,6 +43,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/SelfScreening" component={SelfScreening} />
+          <Route path="/SelfScreeningeng" component={SelfScreeningeng} />
 
         </div>
       </div>
