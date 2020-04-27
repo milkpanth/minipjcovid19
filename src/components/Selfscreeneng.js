@@ -68,7 +68,8 @@ const SelfScreening = () => {
       register.symptomRunnynose === '1' &&
       register.symptomShortnessofbreath === '1' &&
       register.symptomSorethroats === '1' &&
-      register.nhistory === '1' || '2' &&
+      register.nhistory === '1' ||
+      register.nhistory === '2' &&
       register.thistory === '1'
     )
       return setStatus('Risky  Quarantine 14 days') && console.log('Risk Assessment = Risky')
