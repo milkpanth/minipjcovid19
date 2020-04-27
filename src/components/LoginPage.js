@@ -48,12 +48,12 @@ function LoginPage() {
                     <div className='login-form'>
                         <form>
                             <div className='form-group'>
-                                <label>User Name</label>
+                                <label>E-mail</label>
                                 <input
                                     type='text'
                                     onChange={e => setEmail(e.target.value)}
                                     className='form-control'
-                                    placeholder='User Name'
+                                    placeholder='E-mail'
                                 ></input>
                             </div>
 
